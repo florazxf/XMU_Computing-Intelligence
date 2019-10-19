@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
     while(T>T_end):
         for i in range(1,L):
-            city_list_copy = city_list
+            city_list_copy = city_list[:] #这里要用深拷贝，否则相当于没有创建新的列表city_list_copy和city_list的值就会永远是一样的
             city_list = create_newpath()#采用两变换法产生新的路径
             f1 = path_len(city_list_copy) #原来的路径长度
             f2 = path_len(city_list) #新路径长度
